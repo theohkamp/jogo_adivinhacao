@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body {
+    background: linear-gradient(#FDB777 0%, #FDA766 33.33%, #FD9346 66.67%, #FD7F2C 100%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*body::before {
+    background-image: url("img/code.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}*/
+
+.container {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 24px;
+    border: 1px solid #FA5209;
+    box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
+    background-image: url("img/Ruido.png");
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.container__content {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.container__informations {
+    flex: 1;
+    padding: 3rem;
+}
+
+.container__button {
+    border-radius: 16px;
+    background: #FF6200;
+    padding: 16px 24px;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    border: none;
+    margin-top: 2rem;
+}
+
+.container__button:hover{
+    background-color: #F93500;
+}
+
+.container__title {
+    padding: 20% 0% 0% 0%;
+}
+
+.container__text {
+    margin: 16px 0 16px 0;
+}
+
+.container__text-orange {
+    color: #FA5209;
+}
+
+.container__input {
+    width: 100%;
+    height: 72px;
+    border-radius: 16px;
+    background-color: #FFF;
+    border: none;
+    color: #FA5209;
+    padding: 2rem;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+}
+
+.container__buttons {
+    display: flex;
+    gap: 2em;
+}
+
+h1 {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 72px;
+    padding-bottom: 3rem;
+}
+
+p,
+button {
+    font-family: 'Inter', sans-serif;
+}
+
+.text__paragraph {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+button:disabled {
+    background-color: gray;
+}
+
+.container__akinator-image {
+    width: 35%;
+}
+
+@media screen and (max-width: 1250px) {
+
+    h1 {
+        font-size: 50px;
+    }
+
+    .container{
+        min-height: auto;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .container__button {
+        font-size: 16px;
+    }
+
+    .container__title {
+        padding: 0;
+    }
+
+    .text__paragraph {
+        font-size: 24px;
+    }
+
+    .container__akinator-image {
+        width: 50%;
+        margin-bottom: -15%;
+    }
+
+    .container__content {
+       display: flex;
+       flex-direction: column-reverse;
+       align-items: center;
+    }
+
+    .container__information {
+        padding: 1rem
+    }
+}
