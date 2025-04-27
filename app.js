@@ -1,18 +1,32 @@
+let drawnNumberList = [];
+
 let difficulty = 100;
 
-function generateSecretNumber(dif){
-    return parseInt(dif*Math.random()+1);
+function generateSecretNumber(){
+    let generatedNumber = parseInt(difficulty*Math.random()+1);
+    let generateNumberQuantity = drawnNumberList.length
+
+    if(generateNumberQuantity == difficulty){
+        drawnNumberList = []
+    }
+
+    if (drawnNumberList.includes(generatedNumber)){
+        return generateSecretNumber();
+    }else {
+        drawnNumberList.push(generatedNumber);
+        console.log(drawnNumberList)
+        return generatedNumber
+    }
 }
 
-generateSecretNumber(difficulty);
-let secretNumber = generateSecretNumber(difficulty);
+let secretNumber = generateSecretNumber();
 
 let tries = 1
-console.log(secretNumber);
 
 function showTextOnScreen(tag, text){
     let title = document.querySelector(tag);
     title.innerHTML = text;
+    responsiveVoice.speak(text, "Brazilian Portuguese Male", {rate:1.8})
 }
 
 function showInitialText(){
@@ -39,7 +53,7 @@ function checkGuess(){
         document.getElementById('restart').removeAttribute('disabled');
     }else{
         if(guess > secretNumber){
-            showTextOnScreen('p', `Ele não trabalha tudo isso não... Menos que ${guess}`);
+            showTextOnScreen('p', `Pisa no freio!! Foram menos que ${guess} entregas`);
         }else{
             showTextOnScreen('p', `Ish... Um pouco mais que ${guess}`);
         }
@@ -55,7 +69,7 @@ function cleanShield(){
 }
 
 function restartGame(){
-    secretNumber = generateSecretNumber(difficulty);
+    secretNumber = generateSecretNumber();
     document.getElementById('restart').setAttribute('disabled', true)
     console.log(secretNumber);
     cleanShield();

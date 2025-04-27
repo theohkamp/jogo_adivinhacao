@@ -29,14 +29,12 @@ body {
     width: 80%;
     height: 80%;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
     border-radius: 24px;
     border: 1px solid #FA5209;
     box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
     background-image: url("img/Ruido.png");
     background-size: 100% 100%;
-    position: relative;
+    position: absolute;
 }
 
 .container__content {
@@ -56,7 +54,7 @@ body {
     background: #FF6200;
     padding: 16px 24px;
     width: 100%;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
     border: none;
     margin-top: 2rem;
@@ -66,9 +64,6 @@ body {
     background-color: #F93500;
 }
 
-.container__title {
-    padding: 20% 0% 0% 0%;
-}
 
 .container__text {
     margin: 16px 0 16px 0;
@@ -86,7 +81,7 @@ body {
     border: none;
     color: #FA5209;
     padding: 2rem;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
     font-family: 'Inter', sans-serif;
 }
@@ -117,19 +112,22 @@ button:disabled {
 }
 
 .container__akinator-image {
-    width: 35%;
+    padding: 0.1%;
+    width: 40%;
 }
 
-@media screen and (max-width: 1250px) {
+@media (max-width: 1350px) {
 
     h1 {
         font-size: 50px;
     }
 
     .container{
-        min-height: auto;
+        height: auto;
+        min-height: 80%;
         display: flex;
         flex-direction: column-reverse;
+        justify-content: space-between;
         align-items: center;
     }
 
@@ -138,16 +136,19 @@ button:disabled {
     }
 
     .container__title {
+        font-size: 1.8rem;
         padding: 0;
     }
 
     .text__paragraph {
-        font-size: 24px;
+        font-size: 1.3rem;
     }
 
     .container__akinator-image {
-        width: 50%;
-        margin-bottom: -15%;
+        margin-bottom: -25%;
+        object-fit: contain;
+        width: 60%;
+        height: auto;
     }
 
     .container__content {
